@@ -1025,6 +1025,8 @@ config EXT_ANC
 	help
 	 This option enables support for anti-noise cnacellation
 	 on Sensor DSP.
+config STATE_NOTIFIER
+    bool "State Notifier"
 
 config MFSE_QMI
 	bool "QMI client for MFSE"
