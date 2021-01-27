@@ -9,11 +9,11 @@ red='\033[0;31m'
 nocol='\033[0m'
 
 # Kernel details
-KERNEL_NAME="Enigma"
+KERNEL_NAME="Popcorn"
 DATE=$(date +"%d-%m-%Y-%I-%M")
 DEVICE="NOKIA_SDM660"
 FINAL_ZIP=$KERNEL_NAME-$DATE.zip
-defconfig=enigma_defconfig
+defconfig=popcorn_defconfig
 
 # Dirs
 BASE_DIR=`pwd`/../
@@ -59,7 +59,7 @@ mv $ANYKERNEL_DIR/UPDATE-AnyKernel2.zip $UPLOAD_DIR/$FINAL_ZIP
 # Options
 function options() {
 echo -e "$cyan***********************************************"
-  echo "          Compiling Enigma Kernel          "
+  echo "          Compiling Popcorn Kernel          "
   echo -e "***********************************************$nocol"
   echo -e " "
   echo -e " Select one of the following types of build : "
