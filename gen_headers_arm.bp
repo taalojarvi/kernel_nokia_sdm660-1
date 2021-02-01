@@ -12,37 +12,18 @@ gen_headers_srcs_arm = [
 
 gen_headers_exclude_srcs_arm = [
     "include/uapi/linux/a.out.h",
-    "include/uapi/drm/armada_drm.h",
-    "include/uapi/drm/omap_drm.h",
     "include/uapi/linux/auto_dev-ioctl.h",
     "include/uapi/linux/batman_adv.h",
-    "include/uapi/linux/bcache.h",
     "include/uapi/linux/btrfs_tree.h",
-    "include/uapi/linux/cryptouser.h",
     "include/uapi/linux/dma-buf.h",
-    "include/uapi/linux/hash_info.h",
     "include/uapi/linux/kcm.h",
-    "include/uapi/linux/kcov.h",
-    "include/uapi/linux/kfd_ioctl.h",
-    "include/uapi/linux/lightnvm.h",
-    "include/uapi/linux/module.h",
     "include/uapi/linux/nilfs2_api.h",
     "include/uapi/linux/nilfs2_ondisk.h",
     "include/uapi/linux/nsfs.h",
-    "include/uapi/linux/pr.h",
-    "include/uapi/linux/stm.h",
-    "include/uapi/linux/tee.h",
-    "include/uapi/linux/userio.h",
-    "include/uapi/linux/wil6210_uapi.h",
     "include/uapi/rdma/qedr-abi.h",
-    "include/uapi/video/adf.h",
     "include/uapi/linux/cifs/cifs_mount.h",
     "include/uapi/linux/genwqe/genwqe_card.h",
     "include/uapi/linux/goldfish/goldfish_dma.h",
-    "include/uapi/linux/netfilter/xt_HARDIDLETIMER.h",
-    "include/uapi/linux/netfilter/xt_SYNPROXY.h",
-    "include/uapi/linux/usb/f_accessory.h",
-    "include/uapi/linux/usb/f_mtp.h",
 ]
 
 gen_headers_out_arm = [
@@ -52,24 +33,6 @@ gen_headers_out_arm = [
     "asm/unistd-common.h",
     "asm/unistd-oabi.h",
     "asm/unistd-eabi.h",
-
-    // Matching mandatory-y:
-
-    "asm/bitsperlong.h",
-    "asm/errno.h",
-    "asm/ioctl.h",
-    "asm/ipcbuf.h",
-    "asm/msgbuf.h",
-    "asm/param.h",
-    "asm/poll.h",
-    "asm/resource.h",
-    "asm/sembuf.h",
-    "asm/shmbuf.h",
-    "asm/siginfo.h",
-    "asm/socket.h",
-    "asm/sockios.h",
-    "asm/termbits.h",
-    "asm/termios.h",
 
     // From include/uapi/**/*.h
 
@@ -904,6 +867,33 @@ gen_headers_out_arm = [
     "linux/netfilter/ipset/ip_set_bitmap.h",
     "linux/netfilter/ipset/ip_set_hash.h",
     "linux/netfilter/ipset/ip_set_list.h",
+
+    // Stuff that's needed
+    "linux/usb/f_mtp.h",
+    "video/adf.h",
+    "linux/kcov.h",
+    "linux/tee.h",
+    "linux/keychord.h",
+    "linux/netfilter/xt_HARDIDLETIMER.h",
+    "linux/wil6210_uapi.h",
+    "linux/lightnvm.h",
+    "sound/asoc.h",
+    "linux/userio.h",
+    "linux/cryptouser.h",
+    "linux/pr.h",
+    "linux/netfilter/xt_SYNPROXY.h",
+    "drm/armada_drm.h",
+    "sound/usb_stream.h",
+    "linux/stm.h",
+    "linux/hash_info.h",
+    "linux/coresight-stm.h",
+    "linux/usb/f_accessory.h",
+    "linux/module.h",
+    "linux/vsp1.h",
+    "linux/kfd_ioctl.h",
+    "linux/bcache.h",
+    "drm/amdgpu_drm.h",
+    "drm/omap_drm.h",
 
     // From arch/arm/include/uapi/**/*.h
 
