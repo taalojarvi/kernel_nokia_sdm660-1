@@ -18,7 +18,6 @@
 *.so
 *.so.dbg
 *.mod.c
-*.i
 *.lst
 *.symtypes
 *.order
@@ -116,3 +115,9 @@ all.config
 
 # fetched Android config fragments
 android/configs/android-*.cfg
+
+#
+# Ignore these dirs
+#
+out
+output
