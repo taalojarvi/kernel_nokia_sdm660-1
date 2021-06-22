@@ -1,6 +1,6 @@
 #!/bin/bash
 
-KERNEL_NAME="Enigma"
+KERNEL_NAME="Popcorn"
 DATE=$(date +"%d-%m-%Y-%I-%M")
 FINAL_ZIP=$KERNEL_NAME-$DATE.zip
 
@@ -12,9 +12,9 @@ make O=out clean
 echo "---------------------------------------"
 make O=out mrproper
 echo "---------------------------------------"
-make O=out ARCH=arm64 enigma_defconfig
+make O=out ARCH=arm64 popcorn_defconfig
 
-PATH="/home/thanuj/clang/bin:/home/thanuj/arm64-gcc/bin:/home/thanuj/arm-gcc/bin:${PATH}" \
+PATH="/media/Data/Nokia/clang/bin:/media/Data/Nokia/arm64-gcc/bin:/media/Data/Nokia/arm-gcc/bin:${PATH}" \
 make -j$(nproc --all) O=out \
                       ARCH=arm64 \
                       CC=clang \
@@ -27,9 +27,9 @@ echo "---------------------------------------"
 # Dity Compile
 function dirty_compile() {
 echo "---------------------------------------"
-make O=out ARCH=arm64 enigma_defconfig
+make O=out ARCH=arm64 popcorn_defconfig
 
-PATH="/home/thanuj/clang/bin:/home/thanuj/arm64-gcc/bin:/home/thanuj/arm-gcc/bin:${PATH}"
+PATH="/media/Data/Nokia/clang/bin:/media/Data/Nokia/arm64-gcc/bin:/media/Data/Nokia/arm-gcc/bin:${PATH}"
 make -j$(nproc --all) O=out \
                       ARCH=arm64 \
                       CC=clang \
@@ -47,24 +47,24 @@ echo "---------------------------------------"
 make O=out mrproper
 export ARCH=arm64
 echo "---------------------------------------"
-make enigma_defconfig
+make popcorn_defconfig
 echo "Done!"
 echo "---------------------------------------"
 }
 
 # Zip Kernel
 function make_zip() {
-cp /home/thanuj/sdm660/out/arch/arm64/boot/Image.gz-dtb /home/thanuj/sdm660/AnyKernel3/
-cd && mkdir -p ENIGMA_BUILDS
-cd /home/thanuj/sdm660/AnyKernel3/
+cp /media/Data/Nokia/sdm660/out/arch/arm64/boot/Image.gz-dtb /media/Data/Nokia/sdm660/AnyKernel3/
+cd && mkdir -p POPCORN_BUILDS
+cd /media/Data/Nokia/sdm660/AnyKernel3/
 zip -r9 UPDATE-AnyKernel2.zip * -x README UPDATE-AnyKernel2.zip
-mv /home/thanuj/sdm660/AnyKernel3/UPDATE-AnyKernel2.zip /home/thanuj/ENIGMA_BUILDS/$FINAL_ZIP
+mv /media/Data/Nokia/sdm660/AnyKernel3/UPDATE-AnyKernel2.zip ~/POPCORN_BUILDS/$FINAL_ZIP
 echo "---------------------------------------"
 }
 
 # Clean Up
 function cleanup(){
-rm -rf /home/thanuj/sdm660/AnyKernel3/Image.gz-dtb
+rm -rf /media/Data/Nokia/sdm660/AnyKernel3/Image.gz-dtb
 }
 
 # Menu
